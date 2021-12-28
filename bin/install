@@ -1,0 +1,22 @@
+#!/bin/bash
+
+PATH_ENVIRONMENTS="environments/"
+PATH_ENVIRONMENTS+=`awk -F "PRETTY_NAME=" '{print $2}' /etc/os-release | xargs | sed 'y/ /_/'`
+
+export PATH_ENVIRONMENTS
+
+if [ -d "$PATH_ENVIRONMENTS" ]
+then
+    echo "Environment exists.."
+    exit 0
+else
+    echo "Configuring environments.."
+fi
+
+mkdir environments
+python3 -m venv $PATH_ENVIRONMENTS
+
+echo "Downloading pip requirements.."
+
+source $PATH_ENVIRONMENTS/bin/activate
+pip install -r requirements.txt

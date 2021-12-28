@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Downloading pip requirements.."
+source $PATH_ENVIRONMENTS/bin/activate
+pip install -r requirements.txt
