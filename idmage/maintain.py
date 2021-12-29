@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 
 from image.image import Image
-from idmage.utils import get_random_string
+from idmage import IDmageUtils
 
 mime = magic.Magic(mime=True)
 
@@ -53,7 +53,7 @@ class Maintain(object):
     def secure_save(self, img, new_img):
 
         while True:
-            random_string = get_random_string(quantity=4)
+            random_string = IDmageUtils.get_random_string(quantity=4)
             new_file_name = f'{img.dir_name}/{img.basename}_no_exif_{random_string}{img.extension}'
             p = Path(new_file_name)
 

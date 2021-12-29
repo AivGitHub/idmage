@@ -2,6 +2,8 @@ import os
 
 from settings import PATH_ENVIRONMENTS
 
+from idmage.utils import IDmageUtils
+
 
 try:
     os.environ['PATH_ENVIRONMENTS']
