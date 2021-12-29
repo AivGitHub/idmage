@@ -12,7 +12,7 @@ def run():
                         nargs=1,
                         help='Path to image file')
 
-    parser.add_argument('-d', '--delete_exif',
+    parser.add_argument('-d', '--delete-exif',
                         required=False,
                         action='store_true',
                         help='Remove exif data')

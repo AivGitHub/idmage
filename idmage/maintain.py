@@ -45,6 +45,7 @@ class Maintain(object):
             im_no_exif = img.get_no_exif()
 
             self.secure_save(img, im_no_exif)
+            self.delete_by_path(img.path)
 
             del img
             del im_no_exif
